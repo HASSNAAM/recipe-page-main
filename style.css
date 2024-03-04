@@ -32,34 +32,39 @@
   --Light-Grey: hsl(30, 18%, 87%);
   --Wenge-Brown: hsl(30, 10%, 34%);
   --Dark-Charcoal: hsl(24, 5%, 18%);
+  --body-desktop:rgb(230, 214, 199);
 }
 body {
   font-family: "Outfit", sans-serif;
   color: var(--Wenge-Brown);
 }
+html{
+  padding: 0;
+  margin: 0;
+}
 * {
   box-sizing: border-box;
   line-height: 1.8;
-  box-shadow: 1px 1px 15px var(--RoseWhite);
 }
 h1,
 h2 {
   font-family: "Young Serif", serif;
 }
 .container {
-  width: 90%;
-  margin: 0 auto;
+ border-radius: 30px;
+  padding: 50px;
+  background-color: var(--White);
 }
 header {
-  height: 65vh;
+  height: 50vh;
   border-radius: 30px;
   background-image: url(assets/images/image-omelette.jpeg);
-  background-size: 100% 100%;
-  margin: 50px 0;
+  background-size: cover;
+ background-position: center center;
+ 
 }
 h1 {
   color: var(--Dark-Charcoal);
-  font-size: 65px;
   margin-bottom: 0;
   font-weight: 400;
 }
@@ -140,14 +145,17 @@ ol li:before {
 }
 .container h2:last-of-type {
   color: var(--Nutmeg);
-  margin-top: 50px;
+  margin: 50px 0 30px 30px;
 }
 p:nth-of-type(2) {
   width: 100%;
+  margin-left: 30px;
 }
 table {
   padding: 10px;
-  width: 100%;
+  width: 95%;
+  margin-left: 30px;
+  margin-right: calc(100vw-(95%+30px));
 }
 table td {
   width: 50%;
@@ -171,6 +179,19 @@ table tr:not(:last-child)::after {
   left: 0;
 }
 @media screen and (max-width: 678px) {
+  .container{
+    padding: 0;
+  }
+  body{
+    padding: 0;
+    margin: 0;
+  }
+  header{
+    border-radius: 0;
+  }
+  main{
+    padding: 30px;
+  }
   h1 {
     line-height: 1.2;
     font-size: 40px;
@@ -187,5 +208,14 @@ table tr:not(:last-child)::after {
   }
   ol {
     padding: 10px;
+  }
+  table{
+    margin-left: 10px;
+  }
+}
+@media screen and (min-width:679px){
+  body{
+    background-color:var(--body-desktop);
+    padding: 70px 200px 30px;
   }
 }
